@@ -10,6 +10,8 @@ import plotly.io as pio
 import plotly.express as px
 import io
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 title = " Analysis of Pakistan Covid-19 Data & Model Training"
 
 st.markdown("<h1 style='font-size:30px;'>{}</h1>".format(title), unsafe_allow_html=True)
@@ -270,28 +272,6 @@ st.write("9-Model is deployed on Streamlit")
 
 
 st.write("Different models like (Logistic Regression,SVM,Decision Tree, Random Forest,KNN) will be trained against this data, during process, one model will be selected and then its results will be evaluated by F1, Recall and Precision ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# import streamlit as st
-
-# algorithm_options = ['Logistic Regression', 'SVM', 'Decision Tree', 'Random Forest', 'KNN']
-# selected_algorithm = st.sidebar.selectbox("Select Algorithm", algorithm_options)
-
-
-
-
 
 
 import pandas as pd
