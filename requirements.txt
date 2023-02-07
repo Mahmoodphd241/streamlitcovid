@@ -137,3 +137,9 @@ XlsxWriter==3.0.6
 yarg==0.1.9
 zipp==3.12.0
 pywin32==303; platform_system=="Windows"
+plotly
+scipy
+pandas
+Flask
+flask-cors
+pyforest
