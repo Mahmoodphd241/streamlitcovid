@@ -319,7 +319,7 @@ elif selected_algorithm == 'KNN':
 if selected_algorithm == 'Logistic Regression':
     model = LogisticRegression()
 elif selected_algorithm == 'SVM':
-    model = SVC()
+    model = SVM()
 elif selected_algorithm == 'Decision Tree':
     model = DecisionTreeClassifier()
 elif selected_algorithm == 'Random Forest':
