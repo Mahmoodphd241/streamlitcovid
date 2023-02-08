@@ -277,7 +277,6 @@ st.write("Different models like (Logistic Regression,SVM,Decision Tree, Random F
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -299,7 +298,7 @@ X = df[['cases', 'deaths', 'recovered', 'travel_history',"city"]]
 y = df['International_history']
 
 
-algorithm_options = ['Logistic Regression', 'SVM', 'Decision Tree', 'Random Forest', 'KNN']
+algorithm_options = ['Logistic Regression', 'Decision Tree', 'Random Forest', 'KNN']
 selected_algorithm = st.sidebar.selectbox("Select Algorithm", algorithm_options)
 
 # split the data into training and testing sets
@@ -307,8 +306,6 @@ X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2)
 
 if selected_algorithm == 'Logistic Regression':
     st.write("Result for Logistic Regression")
-elif selected_algorithm == 'SVM':
-    st.write("Result for SVM")
 elif selected_algorithm == 'Decision Tree':
     st.write("Result for  Decision Tree")
 elif selected_algorithm == 'Random Forest':
@@ -318,8 +315,6 @@ elif selected_algorithm == 'KNN':
 
 if selected_algorithm == 'Logistic Regression':
     model = LogisticRegression()
-elif selected_algorithm == 'SVM':
-    model = SVM()
 elif selected_algorithm == 'Decision Tree':
     model = DecisionTreeClassifier()
 elif selected_algorithm == 'Random Forest':
