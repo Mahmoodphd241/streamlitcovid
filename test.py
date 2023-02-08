@@ -274,10 +274,6 @@ st.write("9-Model is deployed on Streamlit")
 st.write("Different models like (Logistic Regression,SVM,Decision Tree, Random Forest,KNN) will be trained against this data, during process, one model will be selected and then its results will be evaluated by F1, Recall and Precision ")
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> cf77bf45b2248ddd5691e2ed092f34d7ab0552fd
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
