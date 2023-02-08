@@ -274,6 +274,10 @@ st.write("9-Model is deployed on Streamlit")
 st.write("Different models like (Logistic Regression,SVM,Decision Tree, Random Forest,KNN) will be trained against this data, during process, one model will be selected and then its results will be evaluated by F1, Recall and Precision ")
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> cf77bf45b2248ddd5691e2ed092f34d7ab0552fd
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -314,12 +318,25 @@ elif selected_algorithm == 'KNN':
     st.write("Result for  KNN")
 
 if selected_algorithm == 'Logistic Regression':
+    C = st.sidebar.number_input("C (Regularization parameter)", 0.01, 10.0, step=0.01, key="C_LR")
+    max_iter = st.sidebar.slider("Maximum number of iterations", 100, 500, key="max_iter")
+    penality = st.sidebar.slider("Penality", 11, 12, key="penality")
     model = LogisticRegression()
 elif selected_algorithm == 'Decision Tree':
+    st.sidebar.subheader("Model parameters")
+    criterion= st.sidebar.radio("Criterion(measures the quality of split)", ("gini", "entropy"), key="criterion")
+    splitter = st.sidebar.radio("Splitter (How to split at each node?)", ("best", "random"), key="splitter")
+    Max_Depth= st.sidebar.radio("Max_Depth (MAX Depth?)", (1, 5, 10), key="Max_Depth")
     model = DecisionTreeClassifier()
 elif selected_algorithm == 'Random Forest':
+    st.sidebar.subheader("Model Hyperparameters")
+    bootstrap = st.sidebar.radio("Bootstrap samples when building trees", ("True", "False"), key="bootstrap")
+    Max_Depth= st.sidebar.radio("Max_Depth (MAX Depth?)", (1, 5, 10), key="Max_Depth")
+    n_estimators = st.sidebar.number_input("The number of trees in the forest", 100, 5000, step=10, key="n_estimators")
     model = RandomForestClassifier()
 elif selected_algorithm == 'KNN':
+    weights = st.sidebar.radio("weights?", ('uniform', 'distance'), key="weights")
+    n_neighbors = st.sidebar.radio("The number of neighbors", (1, 5, 10), key="n_neighbors")
     model = KNeighborsClassifier()
 
 # fit the model on the training data
