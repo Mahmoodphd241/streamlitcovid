@@ -345,9 +345,15 @@ y_pred=model.predict(X_test)
 
 
 from sklearn.metrics import precision_score,recall_score,f1_score
-st.write("Precision: ",round(precision_score(y_test,y_pred),3))
-st.write("Recall: ",round(recall_score(y_test,y_pred),3))
-st.write("F1: ",round(f1_score(y_test,y_pred),3))
+
+precision = precision_score(y_test,y_pred)
+recall = recall_score(y_test,y_pred)
+f1 = f1_score(y_test,y_pred)
+
+metrics = {'Precision': [precision], 'Recall': [recall], 'F1': [f1]}
+dff = pd.DataFrame(metrics)
+
+st.write(dff)
 
 
 
